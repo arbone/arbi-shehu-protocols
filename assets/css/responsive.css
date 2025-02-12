@@ -1,0 +1,236 @@
+/* Adatta il layout per schermi piccoli */
+@media (max-width: 768px) {
+    header nav ul {
+        display: block; /* Imposta la navigazione come blocco su dispositivi mobili */
+        text-align: center;
+    }
+
+    .hero {
+        padding: 50px 0; /* Meno spazio nella sezione hero per schermi piccoli */
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+header nav ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+/* Sezione Portfolio */
+/* Sezione Portfolio - Allineamento Sinistra */
+/* Sezione Portfolio - Allineamento Testo Senza Interruzioni */
+.portfolio-description {
+    text-align: left;
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+    max-width: 100%; /* Occupa tutta la larghezza disponibile */
+    margin-left: 0;
+    margin-right: auto;
+    white-space: nowrap; /* Evita che il testo vada a capo */
+    overflow: hidden; /* Evita il comportamento indesiderato */
+    text-overflow: ellipsis; /* Se necessario, mostra "..." per testo lungo */
+}
+
+/* Griglia Portfolio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Singolo elemento del portfolio */
+.portfolio-item {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Thumbnail del progetto */
+.portfolio-thumbnail {
+    width: 180px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-thumbnail:hover {
+    transform: scale(1.05);
+}
+
+/* Testo del progetto */
+.portfolio-text {
+    flex: 1;
+}
+
+/* Titolo */
+.portfolio-text h3 {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+/* Descrizione */
+.portfolio-text p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Link per saperne di più */
+.portfolio-link {
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #007aff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.portfolio-link:hover {
+    background-color: #005bb5;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .portfolio-description {
+        color: #ddd;
+    }
+
+    .portfolio-item {
+        background: #1e1e1e;
+        box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .portfolio-text h3 {
+        color: white;
+    }
+
+    .portfolio-text p {
+        color: #ccc;
+    }
+
+    .portfolio-link {
+        background-color: #007aff;
+        color: white;
+    }
+
+    .portfolio-link:hover {
+        background-color: #005bb5;
+    }
+}
+
+/* Nasconde il checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Stile dell'icona hamburger */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+}
+
+/* Mostra l'icona solo su mobile */
+@media (max-width: 1024px) {
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color, white);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 10px 0;
+    }
+
+    /* Mostra il menu quando il checkbox è selezionato */
+    #menu-toggle:checked + .menu-icon + .nav-list {
+        display: flex;
+    }
+
+    .nav-list li {
+        width: 100%;
+        text-align: right;
+        padding: 10px;
+    }
+
+    .nav-list li a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-decoration: none;
+        font-size: 18px;
+    }
+}
+@media (max-width: 768px) {
+    /* Ridurre spazio sotto titoli */
+    .section h2 {
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+    }
+
+    /* Aggiustare spacing delle sezioni */
+    .section {
+        padding: 30px 15px;
+    }
+
+    /* Sistemare griglia portfolio */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    /* Sistemare spaziatura certificazioni */
+    .slider-container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider {
+        gap: 10px;
+    }
+
+    .slide {
+        width: 180px;
+    }
+
+    .slide img {
+        border-radius: 8px;
+    }
+}

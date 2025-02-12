@@ -1,0 +1,213 @@
+$primary-color: #007aff;
+
+.contact-button {
+    background-color: $primary-color;
+    border: 2px solid $primary-color;
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+$primary-color: #007aff;
+$text-color: #fff;
+
+.contact-button {
+    background-color: $primary-color;
+    color: $text-color;
+    border: 2px solid $primary-color;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+.cv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cv-card {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    h3 {
+        font-size: 1.3em;
+        color: #007aff;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1em;
+        line-height: 1.5;
+        color: #bbb;
+    }
+}
+
+/* Responsività */
+@media (max-width: 992px) {
+    .cv-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cv-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centra gli elementi */
+}
+
+.portfolio-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    flex: 1 1 500px; /* Si adatta fino a max 500px */
+}
+
+.portfolio-item img {
+    width: 180px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-text {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .portfolio-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .portfolio-item img {
+        width: 140px;
+    }
+}
+/* Menu Sticky */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95); /* Sfondo leggermente trasparente */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 20px;
+}
+
+/* Sticky anche per mobile */
+@media (max-width: 768px) {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Aggiustiamo il padding per evitare che il contenuto venga coperto */
+    body {
+        padding-top: 70px;
+    }
+}
+
+// Miglioriamo i testi con Bootstrap senza cambiare il design
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700; // Equivalente di .fw-bold
+}
+
+p {
+    color: #6c757d; // Equivalente di .text-secondary (grigio Bootstrap)
+    font-size: 1.1rem; // Aumentiamo leggermente il testo
+}
+/* Adattamento al tema chiaro e scuro */
+body {
+    background-color: #ffffff; // Light mode default
+    color: #333; 
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Modalità dark */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212 !important; // Sfondo scuro
+        color: #ffffff !important; // Testo chiaro
+    }
+
+    .section {
+        background-color: #1e1e1e !important;
+        color: white !important;
+    }
+
+    .contact-form {
+        background-color: #222 !important;
+        color: white !important;
+        border: 1px solid #444 !important;
+    }
+
+    input, textarea {
+        background-color: #333 !important;
+        color: white !important;
+        border: 1px solid #666 !important;
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: #bbb !important;
+    }
+}
+/* Assicura che le sezioni abbiano la larghezza corretta */
+.section {
+    max-width: 90vw; /* Occupa il 90% della larghezza disponibile */
+    margin: 0 auto;
+    padding: 5vw;
+}
+
+/* Risolve il problema dello scrolling quando clicchi sulla navbar */
+.section {
+    scroll-margin-top: 80px; /* Previene il taglio della sezione quando si clicca un link */
+}
+
+/* Ripristina il comportamento sticky della navbar */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background-color);
+}
+
+/* Controllo per la dark/light mode */
+@media (prefers-color-scheme: dark) {
+    .section {
+        background-color: #1e1e1e; /* Colore dark */
+        color: white;
+    }
+}
+
