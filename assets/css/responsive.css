@@ -1,5 +1,5 @@
 /* Adatta il layout per schermi piccoli */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     header nav ul {
         display: block; /* Imposta la navigazione come blocco su dispositivi mobili */
         text-align: center;
@@ -169,7 +169,7 @@ header nav ul {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 75px;
+        top:88px;
         left: 0;
         width: 100%;
         background-color: var(--background-color, white);
@@ -234,3 +234,8 @@ header nav ul {
         border-radius: 8px;
     }
 }
+header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+

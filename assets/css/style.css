@@ -7,6 +7,19 @@ body {
     line-height: 1.6;
 }
 
+.logo-link {
+    text-decoration: none; /* Rimuove la sottolineatura */
+    display: inline-block; /* Mantiene il blocco cliccabile */
+}
+
+.logo-row {
+    white-space: nowrap; /* Impedisce il ritorno a capo */
+}
+
+.logo-link:hover {
+    cursor: pointer; /* Cambia il cursore in modalità "clickable" */
+}
+
 /* Font crypto SOLO per la Hero */
 .hero h1, .hero p {
     font-family: 'Orbitron', sans-serif;
@@ -50,12 +63,13 @@ header {
     padding: 10px 20px;
 }
 
+
 header.scrolled {
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(5px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .nav-list {
         visibility: hidden;
         opacity: 0;
@@ -119,7 +133,7 @@ nav {
 /* Pulsante "Contattami" - Light Mode */
 .contact-button {
     background-color: #007aff; /* Blu acceso */
-    color: #007aff !important;
+    color: #007aff;
     padding: 10px 20px;
     border-radius: 20px;
     font-weight: 600;
@@ -139,14 +153,14 @@ nav {
 /* Pulsante "Contattami" - Dark Mode */
 @media (prefers-color-scheme: dark) {
     .contact-button {
-        background-color: #007aff !important; /* Blu sempre visibile */
-        color: white !important;
-        border: 2px solid white !important; /* Bordo bianco per contrasto */
+        background-color: #007aff ; /* Blu sempre visibile */
+        color: white;
+        border: 2px solid white ; /* Bordo bianco per contrasto */
     }
 
     .contact-button:hover {
-        background-color: #005bb5 !important;
-        border-color: white !important;
+        background-color: #005bb5 ;
+        border-color: white ;
     }
 }
 
@@ -458,7 +472,7 @@ header, .section, .nav-list, .contact-button, .profileDiv, .infoDiv, .socials {
 
     .contact-button {
         background-color: #007aff;
-        color: white !important;
+        color: white;
     }
 
     .profileDiv {
@@ -483,15 +497,15 @@ body, header, .section, .nav-list, .contact-button {
 @media (prefers-color-scheme: dark) {
     .section {
         background-color: #1e1e1e; /* Sfondo scuro */
-        color: white !important; /* Testo completamente bianco */
+        color: white ; /* Testo completamente bianco */
     }
 
     .section h2 {
-        color: white !important; /* Titoli bianchi */
+        color: white ; /* Titoli bianchi */
     }
 
     .section p {
-        color: white !important; /* Paragrafi bianchi */
+        color: white ; /* Paragrafi bianchi */
     }
 }
 /* Stile base del logo */
@@ -925,10 +939,21 @@ body, header, .section, .nav-list, .contact-button {
     align-items: start;
 }
 
+/* Definizione delle variabili di tema */
+:root {
+    --portfolio-light-bg: #f0f0f0;
+    --portfolio-dark-bg: #2a2a2a;
+    --portfolio-hover-light: #e0e0e0;
+    --portfolio-hover-dark: #444;
+    --portfolio-text-light: #222;
+    --portfolio-text-dark: #ffffff;
+    --portfolio-link-hover: #005bb5;
+}
+
 /* Card del portfolio - Modalità chiara */
 .portfolio-item {
-    background-color: #f0f0f0; /* Grigio chiaro per separare dal fondo bianco */
-    color: #222; /* Testo scuro per leggibilità */
+    background-color: var(--portfolio-light-bg);
+    color: var(--portfolio-text-light);
     padding: 20px;
     border-radius: 10px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -937,15 +962,21 @@ body, header, .section, .nav-list, .contact-button {
 /* Card del portfolio - Modalità scura */
 @media (prefers-color-scheme: dark) {
     .portfolio-item {
-        background-color: #2a2a2a; /* Grigio scuro per contrasto con il nero */
-        color: #ffffff; /* Testo bianco per leggibilità */
+        background-color: var(--portfolio-dark-bg);
+        color: var(--portfolio-text-dark);
     }
 }
 
-/* Hover sulla card */
+/* Hover sulla card - Adattato al tema */
 .portfolio-item:hover {
     transform: scale(1.03);
-    background: #3a3a3a;
+    background-color: var(--portfolio-hover-light);
+}
+
+@media (prefers-color-scheme: dark) {
+    .portfolio-item:hover {
+        background-color: var(--portfolio-hover-dark);
+    }
 }
 
 /* Thumbnail più grandi */
@@ -970,7 +1001,13 @@ body, header, .section, .nav-list, .contact-button {
 .portfolio-text h3 {
     font-size: 1.2em; /* Leggermente ridotto */
     margin-bottom: 5px;
-    color: white;
+    color: var(--portfolio-text-dark);
+}
+
+@media (prefers-color-scheme: light) {
+    .portfolio-text h3 {
+        color: var(--portfolio-text-light);
+    }
 }
 
 /* Testo progetto più piccolo e compatto */
@@ -991,7 +1028,7 @@ body, header, .section, .nav-list, .contact-button {
 }
 
 .portfolio-text a:hover {
-    color: #005bb5;
+    color: var(--portfolio-link-hover);
     text-decoration: underline;
 }
 
@@ -1010,10 +1047,8 @@ body, header, .section, .nav-list, .contact-button {
         width: 140px;
     }
 }
+/* Stile della sezione Curriculum */
 
-/* Stile della sezione Curriculum */
-/* Stile della sezione Curriculum */
-/* Stile della sezione Curriculum */
 .cv-description {
     max-width: 800px;
     margin-bottom: 30px;
@@ -1286,3 +1321,92 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+.nav-list {
+    margin-top: -1; /* Assicura che il menu inizi esattamente sotto la navbar */
+    padding-top: 0; /* Rimuove eventuali padding interni */
+    position: absolute; /* Posiziona il menu esattamente sotto la navbar */
+    top: 100%; /* Lo fa iniziare appena sotto la navbar */
+    left: 0;
+    width: 100%;
+}
+/* Stile generale del footer */
+.footer {
+    background-color: #f5f5f7; /* Light mode */
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    display: inline-block;
+}
+
+.footer-links img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Effetto hover */
+.footer-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Copyright */
+.copyright {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+}
+
+/* Modalità Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .footer {
+        background-color: #1e1e1e;
+        color: white;
+    }
+    
+    .footer-links img {
+        filter: brightness(0) invert(1); /* Rende le icone bianche in modalità scura */
+    }
+
+    .copyright {
+        color: #bbb;
+    }
+    @media (prefers-color-scheme: dark) {
+        .footer {
+            background-color: #1e1e1e;
+            color: white;
+        }
+        
+        .footer-links img {
+            filter: brightness(0) invert(1); /* Rende bianche tutte le icone */
+        }
+    
+        /* Eccezione per LinkedIn: carica un'icona bianca specifica */
+        .footer-links a[href*="linkedin.com"] img {
+            content: url("https://www.svgrepo.com/show/448234/linkedin.svg");
+        }
+    
+        .copyright {
+            color: #bbb;
+        }
+    }
+}
+
