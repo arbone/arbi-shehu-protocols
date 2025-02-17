@@ -7,10 +7,14 @@ body {
     line-height: 1.6;
 }
 
+/* Logo Link cliccabile e senza sottolinature */
 .logo-link {
+    display: flex;
+    align-items: center;
     text-decoration: none; /* Rimuove la sottolineatura */
     display: inline-block; /* Mantiene il blocco cliccabile */
 }
+
 
 .logo-row {
     white-space: nowrap; /* Impedisce il ritorno a capo */
@@ -107,7 +111,7 @@ nav {
 .nav-list li a {
     color: #333;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     transition: color 0.3s ease;
 }
@@ -120,7 +124,7 @@ nav {
 }
 
 .logo img {
-    height: 50px;
+    height: 100px;
     width: auto;
     max-height: 100%;
     display: block;
@@ -146,7 +150,7 @@ nav {
 
 /* Hover in Light Mode */
 .contact-button:hover {
-    background-color: #005bb5;
+    background-color: #ffffff;
     border-color: #005bb5;
 }
 
@@ -159,7 +163,7 @@ nav {
     }
 
     .contact-button:hover {
-        background-color: #005bb5 ;
+        background-color: white ;
         border-color: white ;
     }
 }
@@ -508,94 +512,32 @@ body, header, .section, .nav-list, .contact-button {
         color: white ; /* Paragrafi bianchi */
     }
 }
-/* Stile base del logo */
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-family: 'Orbitron', sans-serif; /* Font crypto */
-    font-weight: 700;
-}
-
-/* ARBI in blu */
-.logo-blue {
-    color: #007aff; /* Blu */
-    font-size: 40px; /* Dimensione testo */
-    font-weight: 700;
-}
-
-/* SHEHU in nero */
-.logo-black {
-    color: #000; /* Nero */
-    font-size: 40px;
-    font-weight: 700;
-}
-
-/* PROTOCOLS in bold */
-.logo-bold {
-    color: #000; /* Nero */
-    font-size: 50px; /* Più grande */
-    font-weight: 900;
-}
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-    .logo-black, .logo-bold {
-        color: white; /* Rende il testo bianco in Dark Mode */
-    }
-}
 
 /* Contenitore principale del logo */
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-family: 'Orbitron', sans-serif; /* Font crypto */
-    line-height: 1.1; /* Riduce lo spazio verticale */
-}
-
-/* Contenitore principale del logo */
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-family: 'Orbitron', sans-serif;
-    line-height: 1.1;
-}
-
-/* Contenitore generale del logo */
 .logo-container {
     display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Mantiene tutto a sinistra */
-    width: 100%;
-}
-
-/* Contenitore principale del logo */
-.logo {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Allinea tutto a sinistra */
+    align-items: flex-start;
     text-align: left;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', sans-serif; /* Forza l'uso di Orbitron */
     line-height: 1.1;
+    max-width: 160px;
 }
 
-/* Contenitore per "ARBI SHEHU" */
+/* ARBI e SHEHU sulla stessa riga */
 .logo-top {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 5px; /* Riduce lo spazio tra ARBI e SHEHU */
+    align-items: center;
+    gap: 5px;
 }
 
-/* ARBI e SHEHU con stesse dimensioni */
+/* ARBI e SHEHU */
 .logo-blue, .logo-black {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
+    margin-right: 3px;
+    white-space: nowrap;
+    font-family: 'Orbitron', sans-serif; /* Forza l'uso di Orbitron */
 }
 
 /* ARBI in blu */
@@ -603,33 +545,26 @@ body, header, .section, .nav-list, .contact-button {
     color: #007aff;
 }
 
-/* SHEHU in nero */
-.logo-black {
+/* SHEHU e PROTOCOLS di default in nero (light mode) */
+.logo-black, .logo-bold {
     color: black;
 }
 
-/* PROTOCOLS in grassetto */
+/* PROTOCOLS sotto */
 .logo-bold {
-    font-size: 19.5px;
+    font-size: 18px;
     font-weight: 900;
-    color: black;
-    text-align: left;
+    margin-top: 2px;
+    font-family: 'Orbitron', sans-serif; /* Forza l'uso di Orbitron */
 }
 
-/* Dark Mode */
+/* Dark Mode - cambia SHEHU e PROTOCOLS in bianco */
 @media (prefers-color-scheme: dark) {
     .logo-black, .logo-bold {
         color: white;
     }
 }
-/* Contenitore dell'immagine */
-.image-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+
 
 /* Immagine del profilo */
 .profilePhoto {
@@ -1322,14 +1257,7 @@ html, body {
     padding: 0;
 }
 
-.nav-list {
-    margin-top: -1; /* Assicura che il menu inizi esattamente sotto la navbar */
-    padding-top: 0; /* Rimuove eventuali padding interni */
-    position: absolute; /* Posiziona il menu esattamente sotto la navbar */
-    top: 100%; /* Lo fa iniziare appena sotto la navbar */
-    left: 0;
-    width: 100%;
-}
+
 /* Stile generale del footer */
 .footer {
     background-color: #f5f5f7; /* Light mode */
