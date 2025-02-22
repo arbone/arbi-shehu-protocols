@@ -1,6 +1,4 @@
 /* Stile base */
-/* Font di default per tutto il sito */
-/* Font di default per tutto il sito (leggibile) */
 body {
     font-family: 'Inter', sans-serif; /* O qualsiasi altro font leggibile */
     font-size: 16px;
@@ -14,7 +12,6 @@ body {
     text-decoration: none; /* Rimuove la sottolineatura */
     display: inline-block; /* Mantiene il blocco cliccabile */
 }
-
 
 .logo-row {
     white-space: nowrap; /* Impedisce il ritorno a capo */

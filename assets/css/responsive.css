@@ -17,11 +17,9 @@
 header nav ul {
     display: flex;
     justify-content: flex-end;
-    gap: 20px;
+    gap: 0px;
 }
 
-/* Sezione Portfolio */
-/* Sezione Portfolio - Allineamento Sinistra */
 /* Sezione Portfolio - Allineamento Testo Senza Interruzioni */
 .portfolio-description {
     text-align: left;
@@ -206,7 +204,7 @@ header nav ul {
 
     /* Aggiustare spacing delle sezioni */
     .section {
-        padding: 30px 15px;
+        padding: 0px 15px;
     }
 
     /* Sistemare griglia portfolio */
